@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # This workflow runs when you push to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Action to checkout your repository code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use Node.js version 20 (or match your local version if different)
+
+      - name: Install dependencies
+        run: npm install # Install your project's dependencies
+
+      - name: Build project
+        run: npm run build # Build your project for production, creating the 'dist' folder
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # Action to deploy to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Automatically provided token for authentication
+          publish_dir: ./dist # Directory containing your built files (from npm run build)
+          # cname: your-custom-domain.com # Uncomment and replace if you have a custom domain
