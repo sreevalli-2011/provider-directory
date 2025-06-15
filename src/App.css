@@ -1,0 +1,19 @@
+
+
+.app-header h1 {
+  font-size: 2.5rem; /* Make the title larger */
+  font-weight: 700; /* Make it bolder */
+  margin-bottom: 0; /* Remove default margin */
+}
+
+/* Ensures the App div takes at least full viewport height and helps push footer down */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Allows main content to take up available space, pushing footer down */
+main {
+  flex-grow: 1;
+}

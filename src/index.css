@@ -1,0 +1,31 @@
+/* src/index.css */
+
+/* Universal box-sizing for consistent layout calculations */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit; /* All elements inherit box-sizing from html */
+}
+
+/* Global body styles to remove default margins/paddings */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensures body takes at least full viewport height */
+  /* REMOVED: display: flex, flex-direction: column, align-items: center */
+  /* These were causing conflicts with Bootstrap's block-level centering */
+  width: 100%; /* Ensure body takes full width */
+}
+
+/* Ensure the root element where React mounts takes full width */
+#root {
+  width: 100%;
+  /* REMOVED: display: flex, flex-direction: column, align-items: center */
+  /* Let Bootstrap's containers handle centering within the app */
+}
+
+/* Ensure main content area takes full width available */
+main {
+  width: 100%;
+}
