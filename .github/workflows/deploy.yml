@@ -5,6 +5,10 @@ on:
     branches:
       - main # This workflow runs when you push to the 'main' branch
 
+# Add this new 'permissions' block here
+permissions:
+  contents: write # This gives the action permission to write to the repository
+
 jobs:
   deploy:
     runs-on: ubuntu-latest # The type of runner that the job will run on
