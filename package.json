@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/sreevalli-2011/provider-directory.git"
   },
-  "homepage": "https://sreevalli-2011.github.io/provider-directory/",
+  "homepage": "https://github.com/sreevalli-2011/provider-directory.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
